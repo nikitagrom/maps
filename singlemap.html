@@ -8,6 +8,9 @@
 #map_canvas1 {
     height: 1px;
 }
+        .container-fluid {
+            padding-top: 50px;
+        }
     </style>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="text/javascript"
@@ -42,7 +45,7 @@
         }
         function getSize() {
             var myWidth = 0, myHeight = 0;
-            var delta = 64;
+var delta = 50;
             if( typeof( window.innerWidth ) == 'number' ) {
                 //Non-IE
                 myWidth = window.innerWidth;
@@ -60,14 +63,13 @@
         }
         jQuery(document).ready(function(){
             var res = getSize()
-
             var hei = jQuery('#map_canvas1').css('height',''+res)
 
         })
     </script>
 </head>
 <body onload="initialize()">
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -103,15 +105,16 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-
+</div>
+<div class="wrap" style="height: auto">
 <div class = "container-fluid">
+
     <div class="row" id = "map_canvas1">
 
     </div>
-</div>
     </div>
-<script>
+</div>
 
-</script>
+
 </body>
 </html>
