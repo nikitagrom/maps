@@ -9,7 +9,7 @@
     </style>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA2Oj8tfysXtYR3zHsqV794hmtLUOp5qGY&sensor=true">
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA2Oj8tfysXtYR3zHsqV794hmtLUOp5qGY&sensor=true&region=UA">
     </script>
     <script type="text/javascript">
         function initialize() {
@@ -24,21 +24,24 @@
                     mapOptions);
             var map3 = new google.maps.Map(document.getElementById("map_canvas3"),
                     mapOptions);
-           var map4 =  new google.maps.Map(document.getElementById("map_canvas4"),
+            var map4 =  new google.maps.Map(document.getElementById("map_canvas4"),
                     mapOptions);
+
         }
+
+
     </script>
 </head>
 <body onload="initialize()">
 
-<div class = "container">
+<div class = "container-fluid">
     <div class="row">
-        <div class="col-md-6" id="map_canvas1" style="width: 50%;height: 400px"></div>
-        <div class="col-md-6" id="map_canvas2" style="width: 50%;height: 400px"></div>
+        <div class="col-md-6" id="map_canvas1" style="width: 50%;height: 450px"></div>
+        <div class="col-md-6" id="map_canvas2" style="width: 50%;height: 450px"></div>
     </div>
     <div class="row">
-        <div class="col-md-6" id="map_canvas3" style="width: 50%;height: 400px"></div>
-        <div class="col-md-6" id="map_canvas4" style="width: 50%;height: 400px"></div>
+        <div class="col-md-6" id="map_canvas3" style="width: 50%;height: 450px"></div>
+        <div class="col-md-6" id="map_canvas4" style="width: 50%;height: 450px"></div>
 
 </div>
 </body>
