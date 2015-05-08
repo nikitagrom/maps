@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 100%; margin: 0; padding: 0 }
+        #map_canvas { height: 100% }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA2Oj8tfysXtYR3zHsqV794hmtLUOp5qGY&sensor=true">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map1 = new google.maps.Map(document.getElementById("map_canvas1"),
+                    mapOptions);
+            var map2 = new google.maps.Map(document.getElementById("map_canvas2"),
+                    mapOptions);
+            var map3 = new google.maps.Map(document.getElementById("map_canvas3"),
+                    mapOptions);
+           var map4 =  new google.maps.Map(document.getElementById("map_canvas4"),
+                    mapOptions);
+        }
+    </script>
+</head>
+<body onload="initialize()">
+
+<div class = "container">
+    <div class="row">
+        <div class="col-md-6" id="map_canvas1" style="width: 50%;height: 400px"></div>
+        <div class="col-md-6" id="map_canvas2" style="width: 50%;height: 400px"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" id="map_canvas3" style="width: 50%;height: 400px"></div>
+        <div class="col-md-6" id="map_canvas4" style="width: 50%;height: 400px"></div>
+
+</div>
+</body>
+</html>
