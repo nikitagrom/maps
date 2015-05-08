@@ -5,12 +5,15 @@
     <style type="text/css">
         html { height: 100% }
         body { height: 100%; margin: 0; padding: 0 }
-
+#map_canvas1 {
+    height: 1px;
+}
     </style>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA2Oj8tfysXtYR3zHsqV794hmtLUOp5qGY&sensor=true&region=UA">
     </script>
+    <script src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript">
         function initialize() {
 
@@ -37,7 +40,30 @@
             var maps = [map1,map2,map3,map4];
 
         }
+        function getSize() {
+            var myWidth = 0, myHeight = 0;
+            var delta = 64;
+            if( typeof( window.innerWidth ) == 'number' ) {
+                //Non-IE
+                myWidth = window.innerWidth;
+                myHeight = window.innerHeight;
+            } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                //IE 6+ in 'standards compliant mode'
+                myWidth = document.documentElement.clientWidth;
+                myHeight = document.documentElement.clientHeight;
+            } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                //IE 4 compatible
+                myWidth = document.body.clientWidth;
+                myHeight = document.body.clientHeight;
+            }
+            return myHeight-delta;
+        }
+        jQuery(document).ready(function(){
+            var res = getSize()
 
+            var hei = jQuery('#map_canvas1').css('height',''+res)
+
+        })
     </script>
 </head>
 <body onload="initialize()">
@@ -77,10 +103,15 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
+
 <div class = "container-fluid">
-    <div class="row" id = "map_canvas1" style="height: 960px">
+    <div class="row" id = "map_canvas1">
 
     </div>
 </div>
+    </div>
+<script>
+
+</script>
 </body>
 </html>
