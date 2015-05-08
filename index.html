@@ -5,7 +5,7 @@
     <style type="text/css">
         html { height: 100% }
         body { height: 100%; margin: 0; padding: 0 }
-        #map_canvas { height: 100% }
+
     </style>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script type="text/javascript"
@@ -13,25 +13,30 @@
     </script>
     <script type="text/javascript">
         function initialize() {
+            var markers = [];
             var mapOptions = {
                 center: new google.maps.LatLng(-34.397, 150.644),
                 zoom: 8,
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                overviewMapControl: true,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
+
             var map1 = new google.maps.Map(document.getElementById("map_canvas1"),
                     mapOptions);
             var map2 = new google.maps.Map(document.getElementById("map_canvas2"),
                     mapOptions);
             var map3 = new google.maps.Map(document.getElementById("map_canvas3"),
                     mapOptions);
-            var map4 =  new google.maps.Map(document.getElementById("map_canvas4"),
+            var map4 = new google.maps.Map(document.getElementById("map_canvas4"),
                     mapOptions);
+            var maps = [map1,map2,map3,map4];
 
         }
-        $('#loading-example-btn').click(function () {
-            var btn = $(this)
-            btn.deleteContents()
-        })
 
     </script>
 </head>
@@ -39,15 +44,18 @@
 
 <div class = "container-fluid">
     <div class="row">
-        <div class="col-md-6" id="map_canvas1" style="height: 480px;"></div>
+        <div class="col-md-6" id="map_canvas1" style="height: 480px"></div>
         <div class="col-md-6" id="map_canvas2" style="height: 480px"></div>
     </div>
 
 </div>
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" id="map_canvas3" style="height:480px "></div>
-            <div class="col-md-6" id="map_canvas4" style="height:480px "></div>
+            <div class="col-md-6" id="map_canvas3" style="height:480px"></div>
+            <div class="col-md-6" id="map_canvas4" style="height:480px ">
+
+        </div>
         </div>
         </div>
 </body>
