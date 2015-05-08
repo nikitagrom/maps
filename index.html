@@ -28,7 +28,10 @@
                     mapOptions);
 
         }
-
+        $('#loading-example-btn').click(function () {
+            var btn = $(this)
+            btn.deleteContents()
+        })
 
     </script>
 </head>
@@ -36,13 +39,16 @@
 
 <div class = "container-fluid">
     <div class="row">
-        <div class="col-md-6" id="map_canvas1" style="width: 50%;height: 450px"></div>
-        <div class="col-md-6" id="map_canvas2" style="width: 50%;height: 450px"></div>
+        <div class="col-md-6" id="map_canvas1" style="height: 450px"></div>
+        <div class="col-md-6" id="map_canvas2" style="height: 450px"></div>
     </div>
-    <div class="row">
-        <div class="col-md-6" id="map_canvas3" style="width: 50%;height: 450px"></div>
-        <div class="col-md-6" id="map_canvas4" style="width: 50%;height: 450px"></div>
 
 </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" id="map_canvas3" style="height: 450px"></div>
+            <div class="col-md-6" id="map_canvas4" style="height: 450px"></div>
+        </div>
+        </div>
 </body>
 </html>
